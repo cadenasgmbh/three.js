@@ -813,11 +813,7 @@ Object3D.prototype = Object.assign( Object.create( EventDispatcher.prototype ), 
 		this.frustumCulled = source.frustumCulled;
 		this.renderOrder = source.renderOrder;
 
-		if (source.userData && typeof source.userData.clone === 'function') {
-			this.userData = source.userData.clone();
-		} else {
-			this.userData = JSON.parse(JSON.stringify(source.userData));
-		}
+		this.userData = JSON.parse( JSON.stringify( source.userData ) );
 
 		if ( recursive === true ) {
 
