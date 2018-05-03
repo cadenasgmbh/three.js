@@ -207,6 +207,10 @@ function resolveIncludes( string ) {
 
 function includeReplacer( match, include ) {
 
+	var header = '';
+	header += "//------------------------------------------------------------------------------------\n";
+	header += "//  " + include + "\n";
+	header += "//------------------------------------------------------------------------------------\n";
 	var string = ShaderChunk[ include ];
 
 	if ( string === undefined ) {
@@ -214,6 +218,8 @@ function includeReplacer( match, include ) {
 		throw new Error( 'Can not resolve #include <' + include + '>' );
 
 	}
+
+	string = header + string;
 
 	return resolveIncludes( string );
 
