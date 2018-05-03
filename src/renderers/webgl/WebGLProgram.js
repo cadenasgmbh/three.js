@@ -160,22 +160,17 @@ function replaceClippingPlaneNums( string, parameters ) {
 
 function parseIncludes( string ) {
 
-	var pattern = /^([ \t]*)#include +<([\w\d.]+)>/gm;
+	var pattern = /^[ \t]*#include +<([\w\d.]+)>/gm;
 
-	function replace(match, spacer, include) {
+	function replace( match, include ) {
 
-		var header = '';
-		header += spacer + "//------------------------------------------------------------------------------------\n";
-		header += spacer + "//  " + include + "\n";
-		header += spacer + "//------------------------------------------------------------------------------------\n";
-		var replace = ShaderChunk[include];
+		var replace = ShaderChunk[ include ];
 
 		if ( replace === undefined ) {
 
 			throw new Error( 'Can not resolve #include <' + include + '>' );
 
 		}
-		replace= header + replace.replace('\n', '\n' + spacer);
 
 		return parseIncludes( replace );
 
