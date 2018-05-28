@@ -87,6 +87,7 @@ Object.assign( Frustum.prototype, {
 		return function intersectsObject( object ) {
 
 			var geometry = object.geometry;
+			if ( geometry) {
 
 			if ( geometry.boundingSphere === null )
 				geometry.computeBoundingSphere();
@@ -95,7 +96,8 @@ Object.assign( Frustum.prototype, {
 				.applyMatrix4( object.matrixWorld );
 
 			return this.intersectsSphere( sphere );
-
+			}
+			return false;
 		};
 
 	}(),
