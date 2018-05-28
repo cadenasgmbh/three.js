@@ -214,7 +214,9 @@ Mesh.prototype = Object.assign( Object.create( Object3D.prototype ), {
 			if ( material === undefined ) return;
 
 			// Checking boundingSphere distance to ray
-
+			if ( !geometry ) {
+				return;
+			}
 			if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
 
 			sphere.copy( geometry.boundingSphere );
