@@ -44,6 +44,7 @@ function MeshBasicMaterial( parameters ) {
 	this.type = 'MeshBasicMaterial';
 
 	this.color = new Color( 0xffffff ); // emissive
+	this.colorEncoding = THREE.LinearEncoding;
 
 	this.map = null;
 

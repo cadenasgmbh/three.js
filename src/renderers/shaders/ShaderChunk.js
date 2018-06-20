@@ -24,6 +24,7 @@ import emissivemap_fragment from './ShaderChunk/emissivemap_fragment.glsl';
 import emissivemap_pars_fragment from './ShaderChunk/emissivemap_pars_fragment.glsl';
 import encodings_fragment from './ShaderChunk/encodings_fragment.glsl';
 import encodings_pars_fragment from './ShaderChunk/encodings_pars_fragment.glsl';
+import encodings_pars_vertex from './ShaderChunk/encodings_pars_fragment.glsl';
 import envmap_fragment from './ShaderChunk/envmap_fragment.glsl';
 import envmap_pars_fragment from './ShaderChunk/envmap_pars_fragment.glsl';
 import envmap_pars_vertex from './ShaderChunk/envmap_pars_vertex.glsl';
