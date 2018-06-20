@@ -47,6 +47,7 @@ function MeshLambertMaterial( parameters ) {
 	this.type = 'MeshLambertMaterial';
 
 	this.color = new Color( 0xffffff ); // diffuse
+	this.colorEncoding = THREE.LinearEncoding;
 
 	this.map = null;
 

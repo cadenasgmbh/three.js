@@ -432,6 +432,9 @@ function WebGLProgram( renderer, extensions, code, material, shader, parameters,
 			'	attribute vec4 skinWeight;',
 
 			'#endif',
+			
+			(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? ShaderChunk[ 'encodings_pars_fragment' ] : '',
+			(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
 
 			'\n'
 
@@ -501,8 +504,8 @@ function WebGLProgram( renderer, extensions, code, material, shader, parameters,
 
 			parameters.dithering ? '#define DITHERING' : '',
 
-			( parameters.outputEncoding || parameters.mapEncoding || parameters.matcapEncoding || parameters.envMapEncoding || parameters.emissiveMapEncoding ) ?
-				ShaderChunk[ 'encodings_pars_fragment' ] : '', // this code is required here because it is used by the various encoding/decoding function defined below
+			( parameters.colorEncoding || parameters.outputEncoding || parameters.mapEncoding || parameters.envMapEncoding || parameters.emissiveMapEncoding ) ? ShaderChunk[ 'encodings_pars_fragment' ] : '', // this code is required here because it is used by the various encoding/decoding function defined below
+			parameters.colorEncoding ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
 			parameters.mapEncoding ? getTexelDecodingFunction( 'mapTexelToLinear', parameters.mapEncoding ) : '',
 			parameters.matcapEncoding ? getTexelDecodingFunction( 'matcapTexelToLinear', parameters.matcapEncoding ) : '',
 			parameters.envMapEncoding ? getTexelDecodingFunction( 'envMapTexelToLinear', parameters.envMapEncoding ) : '',

@@ -26,7 +26,7 @@ void main() {
 
 	#include <clipping_planes_fragment>
 
-	vec4 diffuseColor = vec4( diffuse, opacity );
+	vec4 diffuseColor = colorToLinear(vec4( diffuse, opacity ));
 
 	#include <logdepthbuf_fragment>
 	#include <map_fragment>

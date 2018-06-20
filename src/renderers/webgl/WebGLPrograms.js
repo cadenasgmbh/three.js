@@ -138,6 +138,7 @@ function WebGLPrograms( renderer, extensions, capabilities ) {
 			precision: precision,
 			supportsVertexTextures: capabilities.vertexTextures,
 			outputEncoding: getTextureEncodingFromMap( ( ! currentRenderTarget ) ? null : currentRenderTarget.texture, renderer.gammaOutput ),
+			colorEncoding: material.colorEncoding,
 			map: !! material.map,
 			mapEncoding: getTextureEncodingFromMap( material.map, renderer.gammaInput ),
 			matcap: !! material.matcap,
