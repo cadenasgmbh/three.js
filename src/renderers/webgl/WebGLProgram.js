@@ -433,8 +433,8 @@ function WebGLProgram( renderer, extensions, code, material, shader, parameters,
 
 			'#endif',
 			
-			(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? ShaderChunk[ 'encodings_pars_fragment' ] : '',
-			(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
+			(parameters.colorEncoding !== LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== NoColors) ? ShaderChunk[ 'encodings_pars_fragment' ] : '',
+			(parameters.colorEncoding !== LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== NoColors) ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
 
 			'\n'
 

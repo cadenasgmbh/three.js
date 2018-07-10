@@ -64,7 +64,7 @@ function MeshStandardMaterial( parameters ) {
 	this.type = 'MeshStandardMaterial';
 
 	this.color = new Color( 0xffffff ); // diffuse
-	this.colorEncoding = THREE.LinearEncoding;
+	this.colorEncoding = LinearEncoding;
 	this.roughness = 0.5;
 	this.metalness = 0.5;
 
