@@ -1,5 +1,6 @@
 import { Material } from './Material.js';
 import { cloneUniforms } from '../renderers/shaders/UniformsUtils.js';
+import { LinearEncoding } from '../constants.js';
 
 /**
  * @author alteredq / http://alteredqualia.com/

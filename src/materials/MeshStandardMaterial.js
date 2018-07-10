@@ -2,6 +2,7 @@ import { TangentSpaceNormalMap } from '../constants.js';
 import { Material } from './Material.js';
 import { Vector2 } from '../math/Vector2.js';
 import { Color } from '../math/Color.js';
+import { LinearEncoding } from '../constants.js';
 
 /**
  * @author WestLangley / http://github.com/WestLangley
