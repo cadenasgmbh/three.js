@@ -28,7 +28,7 @@ function ShaderMaterial( parameters ) {
 
 	this.type = 'ShaderMaterial';
 
-	this.colorEncoding = THREE.LinearEncoding;
+	this.colorEncoding = LinearEncoding;
 	this.defines = {};
 	this.uniforms = {};
 
