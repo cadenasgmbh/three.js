@@ -1,5 +1,5 @@
 import { Material } from './Material.js';
-import { MultiplyOperation } from '../constants.js';
+import { MultiplyOperation, LinearEncoding } from '../constants.js';
 import { Color } from '../math/Color.js';
 
 /**
