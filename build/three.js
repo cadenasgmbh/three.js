@@ -12946,7 +12946,7 @@
 		this.type = 'MeshBasicMaterial';
 
 		this.color = new Color( 0xffffff ); // emissive
-		this.colorEncoding = THREE.LinearEncoding;
+		this.colorEncoding = LinearEncoding;
 
 		this.map = null;
 
@@ -13046,7 +13046,7 @@
 
 		this.type = 'ShaderMaterial';
 
-		this.colorEncoding = THREE.LinearEncoding;
+		this.colorEncoding = LinearEncoding;
 		this.defines = {};
 		this.uniforms = {};
 
@@ -16856,8 +16856,8 @@
 
 				'#endif',
 				
-				(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? ShaderChunk[ 'encodings_pars_fragment' ] : '',
-				(parameters.colorEncoding !== THREE.LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== THREE.NoColors) ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
+				(parameters.colorEncoding !== LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== NoColors) ? ShaderChunk[ 'encodings_pars_fragment' ] : '',
+				(parameters.colorEncoding !== LinearEncoding && parameters.colorEncoding && parameters.vertexColors !== NoColors) ? getTexelDecodingFunction( 'colorToLinear', parameters.colorEncoding) : 'vec4 colorToLinear( vec4 value ) { return value; }',
 
 				'\n'
 
@@ -30417,7 +30417,7 @@
 		this.type = 'MeshStandardMaterial';
 
 		this.color = new Color( 0xffffff ); // diffuse
-		this.colorEncoding = THREE.LinearEncoding;
+		this.colorEncoding = LinearEncoding;
 		this.roughness = 0.5;
 		this.metalness = 0.5;
 
@@ -30630,7 +30630,7 @@
 		this.type = 'MeshPhongMaterial';
 
 		this.color = new Color( 0xffffff ); // diffuse
-		this.colorEncoding = THREE.LinearEncoding;
+		this.colorEncoding = LinearEncoding;
 		this.specular = new Color( 0x111111 );
 		this.shininess = 30;
 
@@ -30903,7 +30903,7 @@
 		this.type = 'MeshLambertMaterial';
 
 		this.color = new Color( 0xffffff ); // diffuse
-		this.colorEncoding = THREE.LinearEncoding;
+		this.colorEncoding = LinearEncoding;
 
 		this.map = null;
 
