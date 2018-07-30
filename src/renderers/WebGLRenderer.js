@@ -676,10 +676,18 @@ function WebGLRenderer( parameters ) {
 
 	};
 
+	var currentMaterial = null;
 	var uploadMesh = new Mesh();
 	var emptyState = new WebGLRenderState();
 	emptyState.init();
-	this.drawGeometry = function ( camera, fog, geometry, material, object, group ) {
+	this.setMaterial = function ( material ) {
+
+		_currentMaterialId = - 1;
+		currentMaterial = material;
+
+	};
+
+	this.drawGeometry = function ( camera, fog, geometry, object, group ) {
 
 		if ( vr.enabled ) {
 
@@ -692,8 +700,6 @@ function WebGLRenderer( parameters ) {
 			currentRenderState = emptyState;
 
 		}
-
-		_currentMaterialId = - 1;
 
 		if ( camera !== _currentCamera ) {
 
@@ -712,7 +718,7 @@ function WebGLRenderer( parameters ) {
 
 		object.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );
 		object.normalMatrix.getNormalMatrix( object.modelViewMatrix );
-		this.renderBufferDirect( camera, fog, geometry, material, object, group );
+		this.renderBufferDirect( camera, fog, geometry, currentMaterial, object, group );
 		state.setPolygonOffset( false );
 
 		if ( currentRenderState === emptyState ) {
