@@ -23704,8 +23704,12 @@
 
 				attribute = attributes.get( index );
 
-				renderer = indexedBufferRenderer;
-				renderer.setIndex( attribute );
+				if ( attribute !== undefined ) {
+
+					renderer = indexedBufferRenderer;
+					renderer.setIndex( attribute );
+
+				}
 
 			}
 
@@ -23713,7 +23717,7 @@
 
 				setupVertexAttributes( material, program, geometry );
 
-				if ( index !== null ) {
+				if ( attribute !== undefined ) {
 
 					_gl.bindBuffer( 34963, attribute.buffer );
 
