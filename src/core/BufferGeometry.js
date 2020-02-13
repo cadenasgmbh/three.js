@@ -266,14 +266,10 @@ BufferGeometry.prototype = Object.assign( Object.create( EventDispatcher.prototy
 		if ( object.isPoints || object.isLine ) {
 
 			var positions = new Float32BufferAttribute( geometry.vertices.length * 3, 3 );
+			var colors = new Float32BufferAttribute( geometry.colors.length * 3, 3 );
+
 			this.setAttribute( 'position', positions.copyVector3sArray( geometry.vertices ) );
-
-			if ( geometry.colors && geometry.colors.length > 0 ) {
-
-				var colors = new Float32BufferAttribute( geometry.colors.length * 3, 3 );
-				this.setAttribute( 'color', colors.copyColorsArray( geometry.colors ) );
-
-			}
+			this.setAttribute( 'color', colors.copyColorsArray( geometry.colors ) );
 
 			if ( geometry.lineDistances && geometry.lineDistances.length === geometry.vertices.length ) {
 
