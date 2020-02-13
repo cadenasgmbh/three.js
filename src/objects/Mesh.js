@@ -131,7 +131,6 @@ Mesh.prototype = Object.assign( Object.create( Object3D.prototype ), {
 		var material = this.material;
 		var matrixWorld = this.matrixWorld;
 
-		if ( geometry === undefined ) return;
 		if ( material === undefined ) return;
 
 		// Checking boundingSphere distance to ray

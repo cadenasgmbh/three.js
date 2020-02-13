@@ -87,8 +87,6 @@ Object.assign( Frustum.prototype, {
 
 		var geometry = object.geometry;
 
-		if ( geometry === undefined ) return false;
-
 		if ( geometry.boundingSphere === null ) geometry.computeBoundingSphere();
 
 		_sphere.copy( geometry.boundingSphere ).applyMatrix4( object.matrixWorld );
